@@ -1,0 +1,53 @@
+<h1>Listing people</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Phone</th>
+    <th>Qq</th>
+    <th>State</th>
+    <th>Home 51</th>
+    <th>Home 101</th>
+    <th>Home summer</th>
+    <th>Exam 4</th>
+    <th>Exam 6</th>
+    <th>Exam toefl</th>
+    <th>Exam qimo</th>
+    <th>Guide</th>
+    <th>Guide vip</th>
+    <th>Logic</th>
+    <th>Alumnus</th>
+    <th>Finished</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @people.each do |person| %>
+  <tr>
+    <td><%= person.username %></td>
+    <td><%= person.phone %></td>
+    <td><%= person.qq %></td>
+    <td><%= person.state %></td>
+    <td><%= person.home_51 %></td>
+    <td><%= person.home_101 %></td>
+    <td><%= person.home_summer %></td>
+    <td><%= person.exam_4 %></td>
+    <td><%= person.exam_6 %></td>
+    <td><%= person.exam_toefl %></td>
+    <td><%= person.exam_qimo %></td>
+    <td><%= person.guide %></td>
+    <td><%= person.guide_vip %></td>
+    <td><%= person.logic %></td>
+    <td><%= person.alumnus %></td>
+    <td><%= person.finished %></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>

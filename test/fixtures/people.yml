@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyString
+  phone: 1
+  qq: 1
+  state: MyString
+  home_51: false
+  home_101: false
+  home_summer: false
+  exam_4: false
+  exam_6: false
+  exam_toefl: false
+  exam_qimo: false
+  guide: false
+  guide_vip: false
+  logic: false
+  alumnus: false
+  finished: false
+
+two:
+  username: MyString
+  phone: 1
+  qq: 1
+  state: MyString
+  home_51: false
+  home_101: false
+  home_summer: false
+  exam_4: false
+  exam_6: false
+  exam_toefl: false
+  exam_qimo: false
+  guide: false
+  guide_vip: false
+  logic: false
+  alumnus: false
+  finished: false
