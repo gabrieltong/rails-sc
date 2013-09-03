@@ -1,0 +1,57 @@
+<h1>Listing klasses</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>State</th>
+    <th>Projector</th>
+    <th>Sound</th>
+    <th>Mic</th>
+    <th>Capacity</th>
+    <th>Duration</th>
+    <th>Frequency</th>
+    <th>Cycle</th>
+    <th>Section</th>
+    <th>Kind</th>
+    <th>Chaban</th>
+    <th>Style</th>
+    <th>Video makeup</th>
+    <th>Score</th>
+    <th>Remark</th>
+    <th>Network</th>
+    <th>Tools</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @klasses.each do |klass| %>
+  <tr>
+    <td><%= klass.title %></td>
+    <td><%= klass.state %></td>
+    <td><%= klass.projector %></td>
+    <td><%= klass.sound %></td>
+    <td><%= klass.mic %></td>
+    <td><%= klass.capacity %></td>
+    <td><%= klass.duration %></td>
+    <td><%= klass.frequency %></td>
+    <td><%= klass.cycle %></td>
+    <td><%= klass.section %></td>
+    <td><%= klass.kind %></td>
+    <td><%= klass.chaban %></td>
+    <td><%= klass.style %></td>
+    <td><%= klass.video_makeup %></td>
+    <td><%= klass.score %></td>
+    <td><%= klass.remark %></td>
+    <td><%= klass.network %></td>
+    <td><%= klass.tools %></td>
+    <td><%= link_to 'Show', klass %></td>
+    <td><%= link_to 'Edit', edit_klass_path(klass) %></td>
+    <td><%= link_to 'Destroy', klass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Klass', new_klass_path %>

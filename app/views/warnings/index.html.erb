@@ -1,0 +1,25 @@
+<h1>Listing warnings</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @warnings.each do |warning| %>
+  <tr>
+    <td><%= warning.title %></td>
+    <td><%= warning.user_id %></td>
+    <td><%= link_to 'Show', warning %></td>
+    <td><%= link_to 'Edit', edit_warning_path(warning) %></td>
+    <td><%= link_to 'Destroy', warning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Warning', new_warning_path %>

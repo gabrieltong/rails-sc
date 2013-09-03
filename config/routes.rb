@@ -1,4 +1,19 @@
 RailsSc::Application.routes.draw do
+  resources :klasses
+
+
+  resources :scores
+
+
+  resources :warnings
+
+
+  resources :majors
+
+
+  resources :schools
+
+
   resources :people
 
 

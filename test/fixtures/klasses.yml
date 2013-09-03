@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  state: MyString
+  projector: false
+  sound: false
+  mic: false
+  capacity: 1
+  duration: 1.5
+  frequency: 1.5
+  cycle: 1.5
+  section: 1
+  kind: MyString
+  chaban: false
+  style: MyString
+  video_makeup: false
+  score: 1
+  remark: MyText
+  network: false
+  tools: MyText
+
+two:
+  title: MyString
+  state: MyString
+  projector: false
+  sound: false
+  mic: false
+  capacity: 1
+  duration: 1.5
+  frequency: 1.5
+  cycle: 1.5
+  section: 1
+  kind: MyString
+  chaban: false
+  style: MyString
+  video_makeup: false
+  score: 1
+  remark: MyText
+  network: false
+  tools: MyText
