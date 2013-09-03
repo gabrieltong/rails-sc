@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  klass_id: 1
+  start_at: 2013-09-03 22:21:47
+  before_klass_notification_at: 2013-09-03 22:21:47
+
+two:
+  klass_id: 1
+  start_at: 2013-09-03 22:21:47
+  before_klass_notification_at: 2013-09-03 22:21:47

@@ -1,4 +1,10 @@
 RailsSc::Application.routes.draw do
+  resources :klassplans
+
+
+  resources :rooms
+
+
   resources :klasses
 
 

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Klass:</b>
+  <%= @klassplan.klass_id %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%= @klassplan.start_at %>
+</p>
+
+<p>
+  <b>Before klass notification at:</b>
+  <%= @klassplan.before_klass_notification_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_klassplan_path(@klassplan) %> |
+<%= link_to 'Back', klassplans_path %>

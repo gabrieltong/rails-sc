@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903083032) do
+ActiveRecord::Schema.define(:version => 20130903142147) do
 
   create_table "klasses", :force => true do |t|
     t.string   "title"
@@ -32,13 +32,28 @@ ActiveRecord::Schema.define(:version => 20130903083032) do
     t.text     "remark"
     t.boolean  "network"
     t.text     "tools"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "menu"
+    t.integer  "menu_id"
+    t.boolean  "laser"
+    t.boolean  "need_before_task"
+    t.boolean  "need_after_task"
+    t.text     "before_task"
+    t.text     "after_task"
   end
 
   create_table "klasses_people", :id => false, :force => true do |t|
     t.integer "klass_id"
     t.integer "person_id"
+  end
+
+  create_table "klassplans", :force => true do |t|
+    t.integer  "klass_id"
+    t.datetime "start_at"
+    t.datetime "before_klass_notification_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "majors", :force => true do |t|
@@ -69,6 +84,16 @@ ActiveRecord::Schema.define(:version => 20130903083032) do
     t.datetime "updated_at",  :null => false
     t.integer  "school_id"
     t.integer  "major_id"
+  end
+
+  create_table "rooms", :force => true do |t|
+    t.string   "title"
+    t.boolean  "projector"
+    t.boolean  "sound"
+    t.boolean  "mic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "laser"
   end
 
   create_table "schools", :force => true do |t|

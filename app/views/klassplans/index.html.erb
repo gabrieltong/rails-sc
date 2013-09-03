@@ -1,0 +1,27 @@
+<h1>Listing klassplans</h1>
+
+<table>
+  <tr>
+    <th>Klass</th>
+    <th>Start at</th>
+    <th>Before klass notification at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @klassplans.each do |klassplan| %>
+  <tr>
+    <td><%= klassplan.klass_id %></td>
+    <td><%= klassplan.start_at %></td>
+    <td><%= klassplan.before_klass_notification_at %></td>
+    <td><%= link_to 'Show', klassplan %></td>
+    <td><%= link_to 'Edit', edit_klassplan_path(klassplan) %></td>
+    <td><%= link_to 'Destroy', klassplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Klassplan', new_klassplan_path %>

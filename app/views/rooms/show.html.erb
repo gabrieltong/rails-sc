@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @room.title %>
+</p>
+
+<p>
+  <b>Projector:</b>
+  <%= @room.projector %>
+</p>
+
+<p>
+  <b>Sound:</b>
+  <%= @room.sound %>
+</p>
+
+<p>
+  <b>Mic:</b>
+  <%= @room.mic %>
+</p>
+
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>

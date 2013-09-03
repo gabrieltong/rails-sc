@@ -1,0 +1,29 @@
+<%= form_for(@klassplan) do |f| %>
+  <% if @klassplan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@klassplan.errors.count, "error") %> prohibited this klassplan from being saved:</h2>
+
+      <ul>
+      <% @klassplan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :klass_id %><br />
+    <%= f.number_field :klass_id %>
+  </div>
+  <div class="field">
+    <%= f.label :start_at %><br />
+    <%= f.datetime_select :start_at %>
+  </div>
+  <div class="field">
+    <%= f.label :before_klass_notification_at %><br />
+    <%= f.datetime_select :before_klass_notification_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
