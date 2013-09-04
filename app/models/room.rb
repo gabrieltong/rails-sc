@@ -3,7 +3,7 @@ class Room < ActiveRecord::Base
 
   has_and_belongs_to_many :klasses,:uniq=>true
   has_many :klassplans
-  
+
   def available_for_klass(klass)
   	if klass.projector == true && self.projector == false
   		return false
@@ -21,8 +21,9 @@ class Room < ActiveRecord::Base
   end
 
   def available_for_klassplan(klassplan)
+    return false if klassplan.start_at == nil || klassplan.end_at == nil
     klassplans.each do |_klassplan|
-      return false if !(klassplan.range & _klassplan.range).blank?
+      return false if !(klassplan.end_at <= _klassplan.start_at || _klassplan.end_at <= klassplan.start_at)
     end
     return true
   end

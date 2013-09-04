@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  person_id: 1
+  klass_id: 1
+  front_id: 1
 
 two:
-  title: MyString
-  person_id: 1
+  klass_id: 1
+  front_id: 1
