@@ -1,0 +1,33 @@
+<%= form_for(@baomingitem) do |f| %>
+  <% if @baomingitem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@baomingitem.errors.count, "error") %> prohibited this baomingitem from being saved:</h2>
+
+      <ul>
+      <% @baomingitem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :baoming_id %><br />
+    <%= f.number_field :baoming_id %>
+  </div>
+  <div class="field">
+    <%= f.label :free %><br />
+    <%= f.check_box :free %>
+  </div>
+  <div class="field">
+    <%= f.label :klass_id %><br />
+    <%= f.number_field :klass_id %>
+  </div>
+  <div class="field">
+    <%= f.label :end_at %><br />
+    <%= f.datetime_select :end_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

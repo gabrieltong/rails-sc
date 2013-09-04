@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  baoming_id: 1
+  free: false
+  klass_id: 1
+  end_at: 2013-09-04 22:22:06
+
+two:
+  baoming_id: 1
+  free: false
+  klass_id: 1
+  end_at: 2013-09-04 22:22:06

@@ -11,13 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904084622) do
+ActiveRecord::Schema.define(:version => 20130904142206) do
 
-  create_table "klass_joins", :force => true do |t|
+  create_table "baomingitems", :force => true do |t|
+    t.integer  "baoming_id"
+    t.boolean  "free"
     t.integer  "klass_id"
-    t.integer  "front_id"
+    t.datetime "end_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "baomings", :force => true do |t|
+    t.integer  "person_id"
+    t.string   "discount_way"
+    t.string   "payment_way"
+    t.integer  "makeup"
+    t.datetime "next"
+    t.string   "important"
+    t.boolean  "installment"
+    t.float    "installment_duration"
+    t.float    "installment_value"
+    t.float    "installment_last"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "klasses", :force => true do |t|

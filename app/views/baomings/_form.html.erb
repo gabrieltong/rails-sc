@@ -1,0 +1,57 @@
+<%= form_for(@baoming) do |f| %>
+  <% if @baoming.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@baoming.errors.count, "error") %> prohibited this baoming from being saved:</h2>
+
+      <ul>
+      <% @baoming.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %><br />
+    <%= f.number_field :person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :discount_way %><br />
+    <%= f.text_field :discount_way %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_way %><br />
+    <%= f.text_field :payment_way %>
+  </div>
+  <div class="field">
+    <%= f.label :makeup %><br />
+    <%= f.number_field :makeup %>
+  </div>
+  <div class="field">
+    <%= f.label :next %><br />
+    <%= f.datetime_select :next %>
+  </div>
+  <div class="field">
+    <%= f.label :important %><br />
+    <%= f.text_field :important %>
+  </div>
+  <div class="field">
+    <%= f.label :installment %><br />
+    <%= f.check_box :installment %>
+  </div>
+  <div class="field">
+    <%= f.label :installment_duration %><br />
+    <%= f.text_field :installment_duration %>
+  </div>
+  <div class="field">
+    <%= f.label :installment_value %><br />
+    <%= f.text_field :installment_value %>
+  </div>
+  <div class="field">
+    <%= f.label :installment_last %><br />
+    <%= f.text_field :installment_last %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

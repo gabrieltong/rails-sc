@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: 1
+  discount_way: MyString
+  payment_way: MyString
+  makeup: 1
+  next: 2013-09-04 22:20:27
+  important: MyString
+  installment: false
+  installment_duration: 1.5
+  installment_value: 1.5
+  installment_last: 1.5
+
+two:
+  person_id: 1
+  discount_way: MyString
+  payment_way: MyString
+  makeup: 1
+  next: 2013-09-04 22:20:27
+  important: MyString
+  installment: false
+  installment_duration: 1.5
+  installment_value: 1.5
+  installment_last: 1.5

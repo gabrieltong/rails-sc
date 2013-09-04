@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Baoming:</b>
+  <%= @baomingitem.baoming_id %>
+</p>
+
+<p>
+  <b>Free:</b>
+  <%= @baomingitem.free %>
+</p>
+
+<p>
+  <b>Klass:</b>
+  <%= @baomingitem.klass_id %>
+</p>
+
+<p>
+  <b>End at:</b>
+  <%= @baomingitem.end_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_baomingitem_path(@baomingitem) %> |
+<%= link_to 'Back', baomingitems_path %>
