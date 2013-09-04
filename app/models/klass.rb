@@ -2,8 +2,8 @@
 class Klass < ActiveRecord::Base
   attr_accessible :room_id,:menu,:laser,:capacity, :chaban, :cycle, :duration, :frequency, :kind, :mic, :network, :projector, :remark, :score, :section, :sound, :state, :style, :title, :tools, :video_makeup,:need_before_task,:need_after_task,:before_task,:after_task
   has_and_belongs_to_many :people,:uniq => true  
+  has_and_belongs_to_many :rooms,:uniq=>true
   has_many :klassplans
-  belongs_to :room
 
   Duration = (0.5..3.5).step(0.5)
   KlassMenu = %w(规划类 能力类 应聘类)

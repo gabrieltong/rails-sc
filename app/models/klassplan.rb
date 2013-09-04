@@ -3,5 +3,8 @@ class Klassplan < ActiveRecord::Base
   belongs_to :klass
   validates :klass, :presence => true
   validates :start_at, :presence => true
-  
+
+  def range
+    start_at.to_i...((start_at+duration.day).to_i)
+  end  
 end
