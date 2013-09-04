@@ -1,4 +1,7 @@
 RailsSc::Application.routes.draw do
+  resources :markets
+
+
   resources :klassplans
 
 
