@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904081101) do
+ActiveRecord::Schema.define(:version => 20130904084622) do
 
   create_table "klass_joins", :force => true do |t|
     t.integer  "klass_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20130904081101) do
     t.integer  "major_id"
     t.integer  "grade"
     t.boolean  "signup_openclass"
+    t.string   "sex"
   end
 
   create_table "planitems", :force => true do |t|
