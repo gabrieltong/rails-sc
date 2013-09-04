@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904012906) do
+ActiveRecord::Schema.define(:version => 20130904014557) do
 
   create_table "klasses", :force => true do |t|
     t.string   "title"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130904012906) do
     t.datetime "before_klass_notification_at"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "room_id"
   end
 
   create_table "majors", :force => true do |t|
