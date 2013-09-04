@@ -1,4 +1,10 @@
 RailsSc::Application.routes.draw do
+  resources :baomingitems
+
+
+  resources :baomings
+
+
   resources :planitems
 
 
