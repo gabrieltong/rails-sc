@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904061739) do
+ActiveRecord::Schema.define(:version => 20130904081101) do
 
   create_table "klass_joins", :force => true do |t|
     t.integer  "klass_id"
@@ -120,6 +120,17 @@ ActiveRecord::Schema.define(:version => 20130904061739) do
     t.integer  "major_id"
     t.integer  "grade"
     t.boolean  "signup_openclass"
+  end
+
+  create_table "planitems", :force => true do |t|
+    t.string   "title"
+    t.integer  "klassplan_id"
+    t.integer  "person_id"
+    t.string   "state"
+    t.datetime "start_at"
+    t.float    "duration"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "rooms", :force => true do |t|

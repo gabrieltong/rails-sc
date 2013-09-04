@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  klassplan_id: 1
+  person_id: 1
+  state: MyString
+  start_at: 2013-09-04 16:11:01
+  duration: 1.5
+
+two:
+  title: MyString
+  klassplan_id: 1
+  person_id: 1
+  state: MyString
+  start_at: 2013-09-04 16:11:01
+  duration: 1.5

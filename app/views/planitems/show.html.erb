@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @planitem.title %>
+</p>
+
+<p>
+  <b>Klassplan:</b>
+  <%= @planitem.klassplan_id %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @planitem.person_id %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @planitem.state %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%= @planitem.start_at %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @planitem.duration %>
+</p>
+
+
+<%= link_to 'Edit', edit_planitem_path(@planitem) %> |
+<%= link_to 'Back', planitems_path %>
