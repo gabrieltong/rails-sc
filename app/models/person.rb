@@ -4,7 +4,8 @@ class Person < ActiveRecord::Base
   belongs_to :major  
   has_many :warnings
   has_many :scores
-  
+  has_many :baomings
+  has_many :baomingitems,:through=>:baomings
   has_and_belongs_to_many :klasses,:uniq => true
   has_and_belongs_to_many :klasseplans,:uniq => true  
   has_and_belongs_to_many :markets,:uniq=>true

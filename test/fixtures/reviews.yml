@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  person_id: MyString
+  start_at: 2013-09-05 09:01:43
+  will: MyString
+
+two:
+  title: MyString
+  person_id: MyString
+  start_at: 2013-09-05 09:01:43
+  will: MyString
