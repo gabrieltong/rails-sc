@@ -1,27 +1,42 @@
-<h1>Listing klassplans</h1>
-
-<table>
-  <tr>
-    <th>Klass</th>
-    <th>Start at</th>
-    <th>Before klass notification at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @klassplans.each do |klassplan| %>
-  <tr>
-    <td><%= klassplan.klass_id %></td>
-    <td><%= klassplan.start_at %></td>
-    <td><%= klassplan.before_klass_notification_at %></td>
-    <td><%= link_to 'Show', klassplan %></td>
-    <td><%= link_to 'Edit', edit_klassplan_path(klassplan) %></td>
-    <td><%= link_to 'Destroy', klassplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Klassplan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:klass_id) %></th>
+      <th><%= model_class.human_attribute_name(:start_at) %></th>
+      <th><%= model_class.human_attribute_name(:before_klass_notification_at) %></th>
+      <th><%= model_class.human_attribute_name(:room_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @klassplans.each do |klassplan| %>
+      <tr>
+        <td><%= link_to klassplan.id, klassplan_path(klassplan) %></td>
+        <td><%= klassplan.klass_id %></td>
+        <td><%= klassplan.start_at %></td>
+        <td><%= klassplan.before_klass_notification_at %></td>
+        <td><%= klassplan.room_id %></td>
+        <td><%=l klassplan.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_klassplan_path(klassplan), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      klassplan_path(klassplan),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Klassplan', new_klassplan_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_klassplan_path,
+            :class => 'btn btn-primary' %>

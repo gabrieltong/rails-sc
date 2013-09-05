@@ -1,29 +1,32 @@
-<%= form_for(@klassplan) do |f| %>
-  <% if @klassplan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@klassplan.errors.count, "error") %> prohibited this klassplan from being saved:</h2>
-
-      <ul>
-      <% @klassplan.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @klassplan, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :klass_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :klass_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :start_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :before_klass_notification_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :before_klass_notification_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :room_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :room_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :klass_id %><br />
-    <%= f.number_field :klass_id %>
-  </div>
-  <div class="field">
-    <%= f.label :start_at %><br />
-    <%= f.datetime_select :start_at %>
-  </div>
-  <div class="field">
-    <%= f.label :before_klass_notification_at %><br />
-    <%= f.datetime_select :before_klass_notification_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                klassplans_path, :class => 'btn' %>
   </div>
 <% end %>

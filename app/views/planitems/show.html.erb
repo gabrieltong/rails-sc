@@ -1,35 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Planitem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @planitem.title %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @planitem.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:klassplan_id) %>:</strong></dt>
+  <dd><%= @planitem.klassplan_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:person_id) %>:</strong></dt>
+  <dd><%= @planitem.person_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @planitem.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_at) %>:</strong></dt>
+  <dd><%= @planitem.start_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:duration) %>:</strong></dt>
+  <dd><%= @planitem.duration %></dd>
+</dl>
 
-<p>
-  <b>Klassplan:</b>
-  <%= @planitem.klassplan_id %>
-</p>
-
-<p>
-  <b>Person:</b>
-  <%= @planitem.person_id %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @planitem.state %>
-</p>
-
-<p>
-  <b>Start at:</b>
-  <%= @planitem.start_at %>
-</p>
-
-<p>
-  <b>Duration:</b>
-  <%= @planitem.duration %>
-</p>
-
-
-<%= link_to 'Edit', edit_planitem_path(@planitem) %> |
-<%= link_to 'Back', planitems_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              planitems_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_planitem_path(@planitem), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              planitem_path(@planitem),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

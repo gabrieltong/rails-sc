@@ -1,33 +1,32 @@
-<%= form_for(@baomingitem) do |f| %>
-  <% if @baomingitem.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@baomingitem.errors.count, "error") %> prohibited this baomingitem from being saved:</h2>
-
-      <ul>
-      <% @baomingitem.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @baomingitem, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :baoming_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :baoming_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :free, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :free, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :klass_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :klass_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :end_at, :class => 'datetime_select' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :baoming_id %><br />
-    <%= f.number_field :baoming_id %>
-  </div>
-  <div class="field">
-    <%= f.label :free %><br />
-    <%= f.check_box :free %>
-  </div>
-  <div class="field">
-    <%= f.label :klass_id %><br />
-    <%= f.number_field :klass_id %>
-  </div>
-  <div class="field">
-    <%= f.label :end_at %><br />
-    <%= f.datetime_select :end_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                baomingitems_path, :class => 'btn' %>
   </div>
 <% end %>

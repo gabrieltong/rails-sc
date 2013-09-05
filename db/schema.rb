@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904142206) do
+ActiveRecord::Schema.define(:version => 20130905010143) do
 
   create_table "baomingitems", :force => true do |t|
     t.integer  "baoming_id"
@@ -35,13 +35,6 @@ ActiveRecord::Schema.define(:version => 20130904142206) do
     t.float    "installment_last"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-  end
-
-  create_table "klass_joins", :force => true do |t|
-    t.integer  "klass_id"
-    t.integer  "front_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "klasses", :force => true do |t|
@@ -156,6 +149,15 @@ ActiveRecord::Schema.define(:version => 20130904142206) do
     t.float    "duration"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "title"
+    t.string   "person_id"
+    t.datetime "start_at"
+    t.string   "will"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rooms", :force => true do |t|

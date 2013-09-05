@@ -1,6 +1,9 @@
 'zh-CN':
-   new_klass: '新建课程'
-   activerecord:
+  time:
+    formats:
+      default: "%H:%M"
+  new_klass: '新建课程'
+  activerecord:
     attributes:
       default:
         state: '审核状态'

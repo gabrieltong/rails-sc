@@ -1,55 +1,39 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Baoming -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <b>Person:</b>
-  <%= @baoming.person_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:person_id) %>:</strong></dt>
+  <dd><%= @baoming.person_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:discount_way) %>:</strong></dt>
+  <dd><%= @baoming.discount_way %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payment_way) %>:</strong></dt>
+  <dd><%= @baoming.payment_way %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:makeup) %>:</strong></dt>
+  <dd><%= @baoming.makeup %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:next) %>:</strong></dt>
+  <dd><%= @baoming.next %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:important) %>:</strong></dt>
+  <dd><%= @baoming.important %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:installment) %>:</strong></dt>
+  <dd><%= @baoming.installment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:installment_duration) %>:</strong></dt>
+  <dd><%= @baoming.installment_duration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:installment_value) %>:</strong></dt>
+  <dd><%= @baoming.installment_value %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:installment_last) %>:</strong></dt>
+  <dd><%= @baoming.installment_last %></dd>
+</dl>
 
-<p>
-  <b>Discount way:</b>
-  <%= @baoming.discount_way %>
-</p>
-
-<p>
-  <b>Payment way:</b>
-  <%= @baoming.payment_way %>
-</p>
-
-<p>
-  <b>Makeup:</b>
-  <%= @baoming.makeup %>
-</p>
-
-<p>
-  <b>Next:</b>
-  <%= @baoming.next %>
-</p>
-
-<p>
-  <b>Important:</b>
-  <%= @baoming.important %>
-</p>
-
-<p>
-  <b>Installment:</b>
-  <%= @baoming.installment %>
-</p>
-
-<p>
-  <b>Installment duration:</b>
-  <%= @baoming.installment_duration %>
-</p>
-
-<p>
-  <b>Installment value:</b>
-  <%= @baoming.installment_value %>
-</p>
-
-<p>
-  <b>Installment last:</b>
-  <%= @baoming.installment_last %>
-</p>
-
-
-<%= link_to 'Edit', edit_baoming_path(@baoming) %> |
-<%= link_to 'Back', baomings_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              baomings_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_baoming_path(@baoming), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              baoming_path(@baoming),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
