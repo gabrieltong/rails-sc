@@ -46,6 +46,8 @@ GEM
     commonjs (0.2.6)
     erubis (2.7.0)
     execjs (2.0.1)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -144,6 +146,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   coffee-rails (~> 3.2.1)
+  formtastic
   jquery-rails
   less-rails
   mysql2
