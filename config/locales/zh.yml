@@ -18,6 +18,25 @@
       destroy: '删除'
     form:
       cancel: '取消'
+  teachers:
+    index:
+      title: '老师'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建老师'
+    edit:
+      title: '编辑老师'  
+    show:
+      title: '老师'    
+      back: '老师列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'    
   rooms:
     index:
       title: '教室'
@@ -56,6 +75,7 @@
         phone: '电话'  
         qq: 'QQ'
         username: '姓名'
+        created_at: '添加日期'
       market:
         title: '活动名称'  
         attachment: 'Excel文件'

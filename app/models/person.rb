@@ -15,8 +15,13 @@ class Person < ActiveRecord::Base
   has_and_belongs_to_many :klasses,:uniq => true
   has_and_belongs_to_many :klasseplans,:uniq => true  
 
+  validates :username,:presence=>true
+  
   validates :phone,:presence=>true
   validates :phone,:uniqueness=>true
+  validates :phone,:numericality=>{:greater_than=>10**7}
+
+  validates :qq,:numericality=>{:greater_than=>10**4},:unless=>'qq.blank?'
 
   state_machine :state,:initial=>:student do 
     state :student do      
