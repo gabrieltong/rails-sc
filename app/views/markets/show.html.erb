@@ -24,18 +24,18 @@
       <th>是否报名公开课</th>
       <th><%= Person.human_attribute_name(:created_at) %></th>
     </tr>
-    <%@market.people.each do |person|%>
+    <%@market.students.each do |student|%>
     <tr>
-      <td><%=person.id%></td>
-      <td><%=person.username%></td>
-      <td><%=person.phone%></td>
-      <td><%=person.school.try(:title)%></td>
-      <td><%=person.college.try(:title)%></td>
-      <td><%=person.major.try(:title)%></td>
-      <td><%=person.grade%></td>
-      <td><%=(person.markets_people & @market.markets_people).first.try(:state)%></td>
-      <td><%=person.signup_openclass%></td>
-      <td><%=person.created_at%></td>
+      <td><%=student.id%></td>
+      <td><%=student.username%></td>
+      <td><%=student.phone%></td>
+      <td><%=student.school.try(:title)%></td>
+      <td><%=student.college.try(:title)%></td>
+      <td><%=student.major.try(:title)%></td>
+      <td><%=student.grade%></td>
+      <td><%=(student.markets_students & @market.markets_students).first.try(:state)%></td>
+      <td><%=sf student.signup_openclass%></td>
+      <td><%=student.created_at%></td>
     </tr>
     <%end%>
 

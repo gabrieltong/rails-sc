@@ -58,5 +58,7 @@ module RailsSc
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
   end
 end

@@ -5,8 +5,9 @@ class Market < ActiveRecord::Base
   attr_accessible :attachment
   has_attached_file :attachment
 
-  has_many :markets_people
-  has_many :people,:through=>:markets_people
+  has_many :markets_students
+  has_many :students,:through=>:markets_students
+
   # has_and_belongs_to_many :people,:uniq=>true
 
   validates :title, :presence => true  
@@ -15,20 +16,20 @@ class Market < ActiveRecord::Base
 
   def import
     s = Roo::Excelx.new(attachment.path)
-    self.people = []
+    self.students = []
     s.to_a.each do |data|
-      person  = Person.student.find_or_create_by_phone(data[0])
-      person.username = data[1]
-      person.school = School.find_or_create_by_title(data[2])
-      person.college = College.find_or_create_by_title(data[3])
-      person.major = Major.find_or_create_by_title(data[4])
-      person.grade = data[5]
-      person.signup_openclass = data[6]
-      person.save
-      person.markets << self
-      mp = MarketsPerson.where(:market_id=>self.id,:person_id=>person.id).first
-      mp.state = data[7]
-      mp.save
+      student  = Student.student.find_or_create_by_phone(data[0])
+      student.username = data[1]
+      student.school = School.find_or_create_by_title(data[2])
+      student.college = College.find_or_create_by_title(data[3])
+      student.major = Major.find_or_create_by_title(data[4])
+      student.grade = data[5]
+      student.signup_openclass = data[6]
+      student.save
+      student.markets << self
+      ms = MarketsStudent.where(:market_id=>self.id,:student_id=>student.id).first
+      ms.state = data[7]
+      ms.save
     end
   end
 end

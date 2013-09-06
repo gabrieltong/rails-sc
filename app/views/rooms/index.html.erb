@@ -21,11 +21,11 @@
       <tr>
         <td><%= link_to room.id, room_path(room) %></td>
         <td><%= room.title %></td>
-        <td><%= room.projector %></td>
-        <td><%= room.sound %></td>
-        <td><%= room.mic %></td>
-        <td><%= room.laser %></td>
-        <td><%= room.network %></td>
+        <td><%= sf room.projector %></td>
+        <td><%= sf room.sound %></td>
+        <td><%= sf room.mic %></td>
+        <td><%= sf room.laser %></td>
+        <td><%= sf room.network %></td>
         <td><%=l room.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
