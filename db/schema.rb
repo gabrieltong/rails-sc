@@ -43,13 +43,6 @@ ActiveRecord::Schema.define(:version => 20130906093339) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "klass_joins", :force => true do |t|
-    t.integer  "klass_id"
-    t.integer  "front_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "klasses", :force => true do |t|
     t.string   "title"
     t.string   "state"
@@ -122,6 +115,14 @@ ActiveRecord::Schema.define(:version => 20130906093339) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+  end
+
+  create_table "markets_people", :force => true do |t|
+    t.integer  "market_id"
+    t.integer  "person_id"
+    t.string   "state"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "markets_students", :force => true do |t|

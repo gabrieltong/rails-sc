@@ -2,7 +2,6 @@
 module ApplicationHelper
   def sf(value)
     return '是' if value == true
-    return '否' if value == false
-    ''
+    '否'
   end
 end

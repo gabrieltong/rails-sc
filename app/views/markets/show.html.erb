@@ -13,16 +13,16 @@
   </dl>
   <table class='table table-striped table-bordered'>
     <tr>
-      <th><%= Person.human_attribute_name(:id) %></th>
-      <th><%= Person.human_attribute_name(:username) %></th>
-      <th><%= Person.human_attribute_name(:phone) %></th>
+      <th><%= Student.human_attribute_name(:id) %></th>
+      <th><%= Student.human_attribute_name(:username) %></th>
+      <th><%= Student.human_attribute_name(:phone) %></th>
       <th>学校</th>
       <th>院系</th>
       <th>专业</th>
       <th>年级</th>
       <th>参与方式</th>
       <th>是否报名公开课</th>
-      <th><%= Person.human_attribute_name(:created_at) %></th>
+      <th><%= Student.human_attribute_name(:created_at) %></th>
     </tr>
     <%@market.students.each do |student|%>
     <tr>

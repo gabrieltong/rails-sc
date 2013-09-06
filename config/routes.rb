@@ -1,4 +1,8 @@
 RailsSc::Application.routes.draw do
+  get "entrance/index"
+
+  root :to => "entrance#index"  
+  
   resources :colleges
 
   resources :reviews

@@ -15,21 +15,24 @@ class Market < ActiveRecord::Base
              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",]
 
   def import
-    s = Roo::Excelx.new(attachment.path)
-    self.students = []
-    s.to_a.each do |data|
-      student  = Student.student.find_or_create_by_phone(data[0])
-      student.username = data[1]
-      student.school = School.find_or_create_by_title(data[2])
-      student.college = College.find_or_create_by_title(data[3])
-      student.major = Major.find_or_create_by_title(data[4])
-      student.grade = data[5]
-      student.signup_openclass = data[6]
-      student.save
-      student.markets << self
-      ms = MarketsStudent.where(:market_id=>self.id,:student_id=>student.id).first
-      ms.state = data[7]
-      ms.save
-    end
+    begin
+      s = Roo::Excelx.new(attachment.path)
+      self.students = []
+      s.to_a.each do |data|
+        student  = Student.student.find_or_create_by_phone(data[0])
+        student.username = data[1]
+        student.school = School.find_or_create_by_title(data[2])
+        student.college = College.find_or_create_by_title(data[3])
+        student.major = Major.find_or_create_by_title(data[4])
+        student.grade = data[5]
+        student.signup_openclass = data[6]
+        student.save
+        student.markets << self
+        ms = MarketsStudent.where(:market_id=>self.id,:student_id=>student.id).first
+        ms.state = data[7]
+        ms.save
+      end
+    rescue
+    end  
   end
 end

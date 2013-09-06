@@ -1,4 +1,42 @@
 'zh-CN':
+  markets:
+    index:
+      title: '市场活动'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建市场活动'
+    edit:
+      title: '编辑市场活动'  
+    show:
+      title: '市场活动'    
+      back: '市场活动列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'
+  rooms:
+    index:
+      title: '教室'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建教室'
+    edit:
+      title: '编辑教室'  
+    show:
+      title: '教室'    
+      back: '教室列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'    
   time:
     formats:
       default: "%H:%M"
@@ -7,6 +45,13 @@
     attributes:
       default:
         state: '审核状态'
+        created_at: '添加日期'
+      person:
+        phone: '电话号码'
+
+      student:
+        username: '学员姓名'  
+        created_at: '添加日期'
       teacher:
         phone: '电话'  
         qq: 'QQ'
@@ -14,6 +59,8 @@
       market:
         title: '活动名称'  
         attachment: 'Excel文件'
+        created_at: '创建日期'
+
       room:
         title: '教室名称'
         projector: '投影仪' 
@@ -21,6 +68,8 @@
         mic: '麦克'
         laser: '激光笔'
         network: '网络'
+        created_at: '添加日期'
+        actions: '操作'
       klass:
         title: '课程名称'
         state: '类别'
