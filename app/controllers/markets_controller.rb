@@ -41,9 +41,9 @@ class MarketsController < ApplicationController
   # POST /markets.json
   def create
     @market = Market.new(params[:market])
-
     respond_to do |format|
       if @market.save
+        @market.import
         format.html { redirect_to @market, notice: 'Market was successfully created.' }
         format.json { render json: @market, status: :created, location: @market }
       else
@@ -57,9 +57,9 @@ class MarketsController < ApplicationController
   # PUT /markets/1.json
   def update
     @market = Market.find(params[:id])
-
     respond_to do |format|
       if @market.update_attributes(params[:market])
+        @market.import
         format.html { redirect_to @market, notice: 'Market was successfully updated.' }
         format.json { head :no_content }
       else
@@ -86,6 +86,6 @@ class MarketsController < ApplicationController
   end
 
   def import_submit
-    
+
   end
 end

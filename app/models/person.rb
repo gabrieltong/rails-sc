@@ -10,6 +10,10 @@ class Person < ActiveRecord::Base
   has_and_belongs_to_many :klasses,:uniq => true
   has_and_belongs_to_many :klasseplans,:uniq => true  
   has_and_belongs_to_many :markets,:uniq=>true
+
+  validates :phone,:presence=>true
+  validates :phone,:uniqueness=>true
+
   state_machine :state,:initial=>:student do 
     state :student do      
       # TODO : 提前20天可以知道该时间段哪些课程有足够的学生可以开课
@@ -24,4 +28,8 @@ class Person < ActiveRecord::Base
       end
     end
   end  
+
+  state_machine.states.map do |state|
+    scope state.name, :conditions => { :state => state.name.to_s }
+  end
 end

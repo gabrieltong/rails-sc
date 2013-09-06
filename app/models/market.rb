@@ -1,16 +1,29 @@
+require 'roo'
 class Market < ActiveRecord::Base
   attr_accessible :title
-  has_and_belongs_to_many :people,:uniq=>true
 
   attr_accessible :attachment
   has_attached_file :attachment
+
+  has_and_belongs_to_many :people,:uniq=>true
 
   validates :title, :presence => true  
   validates_attachment_content_type :attachment,:content_type=>["application/vnd.ms-excel",     
              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",]
 
-
   def import
-    
+    s = Roo::Excelx.new(attachment.path)
+    self.people = []
+    s.to_a.each do |data|
+      person  = Person.student.find_or_create_by_phone(data[0])
+      person.username = data[1]
+      person.school = School.find_or_create_by_title(data[2])
+      person.college = College.find_or_create_by_title(data[3])
+      person.major = Major.find_or_create_by_title(data[4])
+      person.grade = data[5]
+      person.signup_openclass = data[6]
+      person.save
+      person.markets << self
+    end
   end
 end

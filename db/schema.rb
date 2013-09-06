@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130906024656) do
+ActiveRecord::Schema.define(:version => 20130906043345) do
 
   create_table "baomingitems", :force => true do |t|
     t.integer  "baoming_id"
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(:version => 20130906024656) do
 
   create_table "people", :force => true do |t|
     t.string   "username"
-    t.integer  "phone"
+    t.integer  "phone",            :limit => 8
     t.integer  "qq"
     t.string   "state"
     t.boolean  "home_51"
@@ -148,8 +148,8 @@ ActiveRecord::Schema.define(:version => 20130906024656) do
     t.boolean  "logic"
     t.boolean  "alumnus"
     t.boolean  "finished"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "school_id"
     t.integer  "major_id"
     t.integer  "grade"
