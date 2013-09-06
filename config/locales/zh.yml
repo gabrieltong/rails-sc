@@ -7,6 +7,10 @@
     attributes:
       default:
         state: '审核状态'
+      teacher:
+        phone: '电话'  
+        qq: 'QQ'
+        username: '姓名'
       market:
         title: '活动名称'  
         attachment: 'Excel文件'
