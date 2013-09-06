@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap-datetimepicker
+//= require locales/bootstrap-datetimepicker.zh-CN
 //= require select2
 //= require select2_locale_zh-CN
 //= require_tree .

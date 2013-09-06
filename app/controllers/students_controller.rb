@@ -1,6 +1,11 @@
 class StudentsController < ApplicationController
   # GET /student
   # GET /student.json
+
+  def search
+    render :json=>Student.where('phone'=>params[:phone]).select('username,qq,sex,id')
+  end
+
   def index
     @students = Student.all
 

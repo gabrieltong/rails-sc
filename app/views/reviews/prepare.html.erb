@@ -1,0 +1,53 @@
+<script>
+	$(function(){
+		$(".search").click(function(){
+			$(".new_student,.new_student_review,.username,.qq").hide()
+			$.post('/students/search',{phone:$("input[name='phone']").val()},function(data){
+				if(data.length==0){
+					$(".new_student").show()
+				}else{
+					var href = $(".new_student_review").attr('href');
+					$(".new_student_review").attr('href',href.replace(/students\/\d+/,'students/'+data[0].id)).show()
+					console.log(data[0].username)
+					$("input[name='username']").val(data[0].username).show()
+					$("input[name='qq']").val(data[0].qq).show()
+					$(".username,.qq").show()
+				}
+			})
+		})
+	})
+</script>
+<%- model_class = Review -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+
+<form class='form-horizontal'>
+  <div class="control-group">
+    <label class="control-label">电话号码</label>
+    <div class="controls">
+      <input class="text_field" name="phone" size="30" type="text">
+    </div>
+  </div>
+ 	<div class="control-group hide username">
+    <label class="control-label">姓名</label>
+    <div class="controls">
+      <input class="text_field" disabled name="username" size="30" type="text">
+    </div>
+  </div>
+  <div class="control-group hide qq">
+    <label class="control-label">QQ</label>
+    <div class="controls">
+      <input class="text_field" disabled name="qq" size="30" type="text">
+    </div>
+  </div>
+  <div class="form-actions">
+    <a href='#' class="search btn">搜索</a>
+    <%= link_to t('.new_student', :default => t("helpers.links.new")),
+            new_student_path,
+            :class => 'btn new_student hide' %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_student_review_path(0),
+            :class => 'btn new_student_review hide' %>        
+  </div>
+</form>

@@ -33,6 +33,7 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+    <%= javascript_include_tag "application" %>
   </head>
   <body>
     <br/><br/><br/>
@@ -48,6 +49,7 @@
             <ul class="nav nav-list">
               <li class="nav-header hide">Sidebar</li>
               <li><%= link_to '市场',markets_path  %></li>
+              <li><%= link_to '评测',reviews_path  %></li>
               <li><%= link_to '教室', rooms_path  %></li>
               <li><%= link_to "教师", teachers_path  %></li>
               <li><%= link_to "学员", students_path  %></li>
@@ -69,7 +71,6 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
-
+    
   </body>
 </html>

@@ -5,22 +5,37 @@
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
   </div>
+  <% if @student %>
   <div class="control-group">
-    <%= f.label :person_id, :class => 'control-label' %>
+    <%= f.label :student, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :person_id, :class => 'text_field' %>
+      <%= f.text_field :student_id,:value=>@student.username,:disabled=>true, :class => 'text_field' %>
+      <%= f.hidden_field :student_id,:value=>@student.id, :class => 'text_field' %>
     </div>
   </div>
+  <% end %>
   <div class="control-group">
     <%= f.label :start_at, :class => 'control-label' %>
     <div class="controls">
-      <%= f.datetime_select :start_at, :class => 'datetime_select' %>
+      <div class="datetimepicker1" class="input-append date">
+        <%= f.text_field :start_at, :class => 'text_field','data-format'=>"yyyy/MM/dd hh:mm:ss" %>
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+          </i>
+        </span>
+      </div>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :will, :class => 'control-label' %>
+    <%= f.label :end_at, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :will, :class => 'text_field' %>
+      <div class="datetimepicker1" class="input-append date">
+        <%= f.text_field :end_at, :class => 'text_field','data-format'=>"yyyy/MM/dd hh:mm:ss" %>
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+          </i>
+        </span>
+      </div>
     </div>
   </div>
 

@@ -1,4 +1,7 @@
 'zh-CN':
+  time:
+    formats:
+      default: "%H:%M"
   students:
     index:
       title: '学员'
@@ -18,6 +21,30 @@
       destroy: '删除'
     form:
       cancel: '取消'
+  reviews:
+    prepare:
+      new: '新建测评'
+      new_student: '创建客户'
+      title: '新建评测 / 搜索用户'
+    index:
+
+      title: '评测'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建评测'
+    edit:
+      title: '编辑评测'  
+    show:
+      title: '评测'    
+      back: '学员列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'    
   schools:
     index:
       title: '学校'
@@ -132,9 +159,6 @@
       destroy: '删除'
     form:
       cancel: '取消'    
-  time:
-    formats:
-      default: "%H:%M"
   new_klass: '新建课程'
   activerecord:
     attributes:
@@ -190,6 +214,16 @@
         network: '网络'
         created_at: '添加日期'
         actions: '操作'
+      review:
+        user: '评测师'
+        student: '客户'
+        title: '名称'
+        start_at: '开始时间'
+        end_at: '结束时间'
+        duration: '持续时间'
+        will: '报名意愿'
+        report_hard: '测评报告-硬件规划'
+        report_soft:  '测评报告-软件规划'
       klass:
         title: '课程名称'
         state: '类别'

@@ -10,6 +10,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def prepare
+    # @student = Student.find_by_phone(params[:phone])
+  end
+
+  def start
+    @review = Review.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @review }
+    end
+  end
+
   # GET /reviews/1
   # GET /reviews/1.json
   def show
@@ -25,7 +37,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new.json
   def new
     @review = Review.new
-
+    @student = Student.find(params[:student_id]) if params[:student_id]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @review }
@@ -35,13 +47,14 @@ class ReviewsController < ApplicationController
   # GET /reviews/1/edit
   def edit
     @review = Review.find(params[:id])
+    @student = @review.student
   end
 
   # POST /reviews
   # POST /reviews.json
   def create
     @review = Review.new(params[:review])
-
+    @student = @review.student
     respond_to do |format|
       if @review.save
         format.html { redirect_to @review, notice: 'Review was successfully created.' }

@@ -3,16 +3,40 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @review.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:person_id) %>:</strong></dt>
-  <dd><%= @review.person_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:start_at) %>:</strong></dt>
-  <dd><%= @review.start_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:will) %>:</strong></dt>
-  <dd><%= @review.will %></dd>
-</dl>
+<table class="table table-striped table-bordered">
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:title) %>:</strong></td>
+    <td><%= @review.title %></td>
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:user) %>:</strong></td>
+    <td><%= @review.user.try(:title) %></td>
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:student) %>:</strong></td>
+    <td><%= @review.student.try(:username) %></td>
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:start_at) %>:</strong></td>
+    <td><%= @review.start_at %></td>
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:end_at) %>:</strong></td>
+    <td><%= @review.end_at %></ddt  
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:will) %>:</strong></td>
+    <td><%= @review.will %></td>
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:report_hard) %>:</strong></td>
+    <td><%= @review.report_hard %></td>
+  </tr>
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:report_soft) %>:</strong></td>
+    <td><%= @review.report_soft %></td>
+  </tr>
+</table>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
