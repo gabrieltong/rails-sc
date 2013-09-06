@@ -1,42 +1,33 @@
 RailsSc::Application.routes.draw do
   resources :colleges
 
-
   resources :reviews
-
 
   resources :baomingitems
 
-
   resources :baomings
-
 
   resources :planitems
 
-
   resources :markets
 
-
   resources :klassplans
-
 
   resources :rooms
 
   resources :services
-  resources :klasses
 
+  resources :courses
+
+  resources :klasses
 
   resources :scores
 
-
   resources :warnings
-
 
   resources :majors
 
-
   resources :schools
-
 
   resources :people
 

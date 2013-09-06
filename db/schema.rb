@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130906075513) do
+ActiveRecord::Schema.define(:version => 20130906093339) do
 
   create_table "baomingitems", :force => true do |t|
     t.integer  "baoming_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130906075513) do
     t.boolean  "need_after_task"
     t.text     "before_task"
     t.text     "after_task"
+    t.string   "type"
   end
 
   create_table "klasses_people", :id => false, :force => true do |t|
