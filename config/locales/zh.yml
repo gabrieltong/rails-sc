@@ -7,6 +7,15 @@
     attributes:
       default:
         state: '审核状态'
+      market:
+        title: '活动名称'  
+      room:
+        title: '教室名称'
+        projector: '投影仪' 
+        sound: '音响'
+        mic: '麦克'
+        laser: '激光笔'
+        network: '网络'
       klass:
         title: '课程名称'
         state: '类别'

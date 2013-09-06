@@ -11,6 +11,7 @@
       <th><%= model_class.human_attribute_name(:sound) %></th>
       <th><%= model_class.human_attribute_name(:mic) %></th>
       <th><%= model_class.human_attribute_name(:laser) %></th>
+      <th><%= model_class.human_attribute_name(:network) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -24,6 +25,7 @@
         <td><%= room.sound %></td>
         <td><%= room.mic %></td>
         <td><%= room.laser %></td>
+        <td><%= room.network %></td>
         <td><%=l room.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

@@ -1,9 +1,11 @@
 class Room < ActiveRecord::Base
-  attr_accessible :mic, :projector, :sound, :title, :laser
+  attr_accessible :mic, :projector, :sound, :title, :laser, :network
 
   has_and_belongs_to_many :klasses,:uniq=>true
   has_many :klassplans
 
+  validates :title,:presence=>true
+  
   def available_for_klass(klass)
   	if klass.projector == true && self.projector == false
   		return false

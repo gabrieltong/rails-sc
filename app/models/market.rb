@@ -27,11 +27,8 @@ class Market < ActiveRecord::Base
       person.save
       person.markets << self
       mp = MarketsPerson.where(:market_id=>self.id,:person_id=>person.id).first
-      ppp mp
-      # (person.markets_people & self.markets_people).each do |mp|
-        mp.state = data[7]
-        mp.save
-      # end
+      mp.state = data[7]
+      mp.save
     end
   end
 end
