@@ -5,7 +5,9 @@ class Market < ActiveRecord::Base
   attr_accessible :attachment
   has_attached_file :attachment
 
-  has_and_belongs_to_many :people,:uniq=>true
+  has_many :markets_people
+  has_many :people,:through=>:markets_people
+  # has_and_belongs_to_many :people,:uniq=>true
 
   validates :title, :presence => true  
   validates_attachment_content_type :attachment,:content_type=>["application/vnd.ms-excel",     
@@ -24,6 +26,12 @@ class Market < ActiveRecord::Base
       person.signup_openclass = data[6]
       person.save
       person.markets << self
+      mp = MarketsPerson.where(:market_id=>self.id,:person_id=>person.id).first
+      ppp mp
+      # (person.markets_people & self.markets_people).each do |mp|
+        mp.state = data[7]
+        mp.save
+      # end
     end
   end
 end

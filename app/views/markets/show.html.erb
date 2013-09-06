@@ -33,7 +33,7 @@
       <td><%=person.college.try(:title)%></td>
       <td><%=person.major.try(:title)%></td>
       <td><%=person.grade%></td>
-      <td><%=''%></td>
+      <td><%=(person.markets_people & @market.markets_people).first.try(:state)%></td>
       <td><%=person.signup_openclass%></td>
       <td><%=person.created_at%></td>
     </tr>
