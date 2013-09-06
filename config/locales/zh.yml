@@ -9,6 +9,7 @@
         state: '审核状态'
       market:
         title: '活动名称'  
+        attachment: 'Excel文件'
       room:
         title: '教室名称'
         projector: '投影仪' 
