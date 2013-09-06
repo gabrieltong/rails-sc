@@ -1,4 +1,80 @@
 'zh-CN':
+  students:
+    index:
+      title: '学员'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建学员'
+    edit:
+      title: '编辑学员'  
+    show:
+      title: '学员'    
+      back: '学员列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'
+  schools:
+    index:
+      title: '学校'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建学校'
+    edit:
+      title: '编辑学校'  
+    show:
+      title: '学校'    
+      back: '学校列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'
+  colleges:
+    index:
+      title: '学院'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建学院'
+    edit:
+      title: '编辑学院'  
+    show:
+      title: '学院'    
+      back: '学院列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消' 
+  majors:
+    index:
+      title: '专业'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '专业'
+    edit:
+      title: '专业'  
+    show:
+      title: '专业'    
+      back: '专业列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'               
   markets:
     index:
       title: '市场活动'
@@ -67,20 +143,41 @@
         created_at: '添加日期'
       person:
         phone: '电话号码'
-
-      student:
-        username: '学员姓名'  
-        created_at: '添加日期'
-      teacher:
-        phone: '电话'  
+        username: '姓名'  
         qq: 'QQ'
-        username: '姓名'
         created_at: '添加日期'
+        sex: '性别'
+      student:
+        home_51: '五一回家'
+        home_101: '十一回家'
+        home_summer: '暑假回家'
+        exam_4: '参加4级考试'
+        exam_6: '参加6级考试'
+        exam_toefl: '参加托福考试'
+        exam_qimo: '参加期末考试'
+        guide: '学员指南'
+        guide_vip: 'VIP指南'
+        logic: '是否按照课程逻辑上课'
+        alumnus: '是否校友'
+        finished: '是否结业'
+        grade: '年级'
+        signup_openclass: '是否报名公开课'
+      teacher:
+
       market:
         title: '活动名称'  
         attachment: 'Excel文件'
         created_at: '创建日期'
 
+      school:
+        title: '学校名称'  
+        created_at: '创建日期'  
+      college:
+        title: '学院名称'  
+        created_at: '创建日期'  
+      major:
+        title: '专业名称'  
+        created_at: '创建日期'      
       room:
         title: '教室名称'
         projector: '投影仪' 
@@ -115,3 +212,4 @@
         need_after_task: '是否需要学生做课后任务'
         before_task: '课前准备'
         after_task: '课后任务' 
+

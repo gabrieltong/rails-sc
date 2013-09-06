@@ -1,10 +1,20 @@
-<%= form_for @person, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @student, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :username, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :username, :class => 'text_field' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :sex, :class => 'control-label' %>
+    <div class="controls">
+      <%Student::Sex.each do |choice|%>
+      <label class="radio inline">
+      <%= f.radio_button :sex, choice%><%=choice%>
+      </label>
+      <%end%>
+    </div>
+  </div>  
   <div class="control-group">
     <%= f.label :phone, :class => 'control-label' %>
     <div class="controls">
@@ -15,12 +25,6 @@
     <%= f.label :qq, :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :qq, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :state, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :state, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -96,39 +100,20 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :school_id, :class => 'control-label' %>
+    <%= f.label :signup_openclass, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :school_id, :class => 'number_field' %>
+      <%= f.check_box :signup_openclass, :class => 'check_box' %>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :major_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :major_id, :class => 'number_field' %>
-    </div>
-  </div>
+  </div>  
   <div class="control-group">
     <%= f.label :grade, :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :grade, :class => 'number_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :signup_openclass, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :signup_openclass, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :sex, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :sex, :class => 'text_field' %>
-    </div>
-  </div>
-
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                people_path, :class => 'btn' %>
+                students_path, :class => 'btn' %>
   </div>
 <% end %>

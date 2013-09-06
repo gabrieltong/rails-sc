@@ -1,60 +1,64 @@
-<%- model_class = Person -%>
+<%- model_class = Student -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:username) %>:</strong></dt>
-  <dd><%= @person.username %></dd>
+  <dd><%= @student.username %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= @person.phone %></dd>
+  <dd><%= @student.phone %></dd>
   <dt><strong><%= model_class.human_attribute_name(:qq) %>:</strong></dt>
-  <dd><%= @person.qq %></dd>
+  <dd><%= @student.qq %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
-  <dd><%= @person.state %></dd>
+  <dd><%= @student.state %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_51) %>:</strong></dt>
-  <dd><%= @person.home_51 %></dd>
+  <dd><%= @student.home_51 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_101) %>:</strong></dt>
-  <dd><%= @person.home_101 %></dd>
+  <dd><%= @student.home_101 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_summer) %>:</strong></dt>
-  <dd><%= @person.home_summer %></dd>
+  <dd><%= @student.home_summer %></dd>
   <dt><strong><%= model_class.human_attribute_name(:exam_4) %>:</strong></dt>
-  <dd><%= @person.exam_4 %></dd>
+  <dd><%= @student.exam_4 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:exam_6) %>:</strong></dt>
-  <dd><%= @person.exam_6 %></dd>
+  <dd><%= @student.exam_6 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:exam_toefl) %>:</strong></dt>
-  <dd><%= @person.exam_toefl %></dd>
+  <dd><%= @student.exam_toefl %></dd>
   <dt><strong><%= model_class.human_attribute_name(:exam_qimo) %>:</strong></dt>
-  <dd><%= @person.exam_qimo %></dd>
+  <dd><%= @student.exam_qimo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:guide) %>:</strong></dt>
-  <dd><%= @person.guide %></dd>
+  <dd><%= @student.guide %></dd>
   <dt><strong><%= model_class.human_attribute_name(:guide_vip) %>:</strong></dt>
-  <dd><%= @person.guide_vip %></dd>
+  <dd><%= @student.guide_vip %></dd>
   <dt><strong><%= model_class.human_attribute_name(:logic) %>:</strong></dt>
-  <dd><%= @person.logic %></dd>
+  <dd><%= @student.logic %></dd>
   <dt><strong><%= model_class.human_attribute_name(:alumnus) %>:</strong></dt>
-  <dd><%= @person.alumnus %></dd>
+  <dd><%= @student.alumnus %></dd>
   <dt><strong><%= model_class.human_attribute_name(:finished) %>:</strong></dt>
-  <dd><%= @person.finished %></dd>
+  <dd><%= @student.finished %></dd>
   <dt><strong><%= model_class.human_attribute_name(:school_id) %>:</strong></dt>
-  <dd><%= @person.school_id %></dd>
+  <dd><%= @student.school_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:major_id) %>:</strong></dt>
-  <dd><%= @person.major_id %></dd>
+  <dd><%= @student.major_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:grade) %>:</strong></dt>
-  <dd><%= @person.grade %></dd>
+  <dd><%= @student.grade %></dd>
   <dt><strong><%= model_class.human_attribute_name(:signup_openclass) %>:</strong></dt>
-  <dd><%= @person.signup_openclass %></dd>
+  <dd><%= @student.signup_openclass %></dd>
   <dt><strong><%= model_class.human_attribute_name(:sex) %>:</strong></dt>
-  <dd><%= @person.sex %></dd>
+  <dd><%= @student.sex %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:college_id) %>:</strong></dt>
+  <dd><%= @student.college_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
+  <dd><%= @student.type %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              people_path, :class => 'btn'  %>
+              students_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_person_path(@person), :class => 'btn' %>
+              edit_student_path(@student), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              person_path(@person),
+              student_path(@student),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

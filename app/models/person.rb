@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Person < ActiveRecord::Base
   attr_accessible :alumnus, :exam_4, :exam_6, :exam_qimo, :exam_toefl, :finished, :guide, :guide_vip, :home_101, :home_51, :home_summer, :logic, :phone, :qq, :state, :username, :phone, :grade, :signup_openclass
 
@@ -15,8 +16,11 @@ class Person < ActiveRecord::Base
   has_and_belongs_to_many :klasses,:uniq => true
   has_and_belongs_to_many :klasseplans,:uniq => true  
 
+  Sex = ['男','女']
   validates :username,:presence=>true
-  
+
+  validates :sex,:inclusion=>{:in=>Sex},:unless=>'sex.blank?'
+
   validates :phone,:presence=>true
   validates :phone,:uniqueness=>true
   validates :phone,:numericality=>{:greater_than=>10**7}
