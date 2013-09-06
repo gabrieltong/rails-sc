@@ -22,7 +22,7 @@ RailsSc::Application.routes.draw do
 
   resources :rooms
 
-
+  resources :services
   resources :klasses
 
 

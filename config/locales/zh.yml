@@ -1,0 +1,34 @@
+'zh-CN':
+  time:
+    formats:
+      default: "%H:%M"
+  new_klass: '新建课程'
+  activerecord:
+    attributes:
+      default:
+        state: '审核状态'
+      klass:
+        title: '课程名称'
+        state: '类别'
+        projector: '投影仪' 
+        sound: '音响'
+        mic: '麦克'
+        laser: '激光笔'
+        capacity: '课程容量'
+        duration: '单次时长(小时)'
+        frequency: '课程频率'
+        cycle: '周期'
+        section: '总节数'
+        kind: '课程通知类型'
+        chaban: '是否可以随时插班'
+        style: '课程形式'
+        video_makeup: '是否可以视频补课'
+        score: '补课积分'
+        remark: '备注栏'
+        network: '网络'
+        tools: '工具'
+        menu: '分类'
+        need_before_task: '是否需要学生做课前准备'
+        need_after_task: '是否需要学生做课后任务'
+        before_task: '课前准备'
+        after_task: '课后任务' 

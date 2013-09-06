@@ -15,4 +15,7 @@
 /tmp
 log
 .ruby-version
-.ruby-gemset
+*/.DS_Store
+*/*/.DS_Store
+.DS_Store
+.gitignore.swp

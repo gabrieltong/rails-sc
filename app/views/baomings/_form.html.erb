@@ -1,57 +1,68 @@
-<%= form_for(@baoming) do |f| %>
-  <% if @baoming.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@baoming.errors.count, "error") %> prohibited this baoming from being saved:</h2>
-
-      <ul>
-      <% @baoming.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @baoming, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :person_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :person_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :discount_way, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :discount_way, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :payment_way, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :payment_way, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :makeup, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :makeup, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :next, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :next, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :important, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :important, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :installment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :installment, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :installment_duration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installment_duration, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :installment_value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installment_value, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :installment_last, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installment_last, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :person_id %><br />
-    <%= f.number_field :person_id %>
-  </div>
-  <div class="field">
-    <%= f.label :discount_way %><br />
-    <%= f.text_field :discount_way %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_way %><br />
-    <%= f.text_field :payment_way %>
-  </div>
-  <div class="field">
-    <%= f.label :makeup %><br />
-    <%= f.number_field :makeup %>
-  </div>
-  <div class="field">
-    <%= f.label :next %><br />
-    <%= f.datetime_select :next %>
-  </div>
-  <div class="field">
-    <%= f.label :important %><br />
-    <%= f.text_field :important %>
-  </div>
-  <div class="field">
-    <%= f.label :installment %><br />
-    <%= f.check_box :installment %>
-  </div>
-  <div class="field">
-    <%= f.label :installment_duration %><br />
-    <%= f.text_field :installment_duration %>
-  </div>
-  <div class="field">
-    <%= f.label :installment_value %><br />
-    <%= f.text_field :installment_value %>
-  </div>
-  <div class="field">
-    <%= f.label :installment_last %><br />
-    <%= f.text_field :installment_last %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                baomings_path, :class => 'btn' %>
   </div>
 <% end %>

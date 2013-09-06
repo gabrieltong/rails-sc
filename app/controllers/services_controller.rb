@@ -1,19 +1,19 @@
-class KlassesController < ApplicationController
-  # GET /klasses
-  # GET /klasses.json
+class ServicesController < ApplicationController
+  
   def index
-    @klasses = Klass.klass
+    @klasses = Klass.service
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @klasses }
     end
+
+    
   end
 
-  # GET /klasses/1
-  # GET /klasses/1.json
+
   def show
-    @klass = Klass.klass.find(params[:id])
+    @klass = Klass.service.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,10 +21,8 @@ class KlassesController < ApplicationController
     end
   end
 
-  # GET /klasses/new
-  # GET /klasses/new.json
   def new
-    @klass = Klass.klass.new
+    @klass = Klass.service.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,15 +30,13 @@ class KlassesController < ApplicationController
     end
   end
 
-  # GET /klasses/1/edit
+
   def edit
-    @klass = Klass.klass.find(params[:id])
+    @klass = Klass.service.find(params[:id])
   end
 
-  # POST /klasses
-  # POST /klasses.json
   def create
-    @klass = Klass.klass.new(params[:klass])
+    @klass = Klass.service.new(params[:klass])
 
     respond_to do |format|
       if @klass.save
@@ -53,10 +49,8 @@ class KlassesController < ApplicationController
     end
   end
 
-  # PUT /klasses/1
-  # PUT /klasses/1.json
   def update
-    @klass = Klass.klass.find(params[:id])
+    @klass = Klass.service.find(params[:id])
 
     respond_to do |format|
       if @klass.update_attributes(params[:klass])
@@ -69,10 +63,8 @@ class KlassesController < ApplicationController
     end
   end
 
-  # DELETE /klasses/1
-  # DELETE /klasses/1.json
   def destroy
-    @klass = Klass.klass.find(params[:id])
+    @klass = Klass.service.find(params[:id])
     @klass.destroy
 
     respond_to do |format|

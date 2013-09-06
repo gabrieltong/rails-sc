@@ -1,81 +1,134 @@
-<%= form_for(@person) do |f| %>
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
-
-      <ul>
-      <% @person.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @person, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :username, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :phone, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :qq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :qq, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :home_51, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :home_51, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :home_101, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :home_101, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :home_summer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :home_summer, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :exam_4, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :exam_4, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :exam_6, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :exam_6, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :exam_toefl, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :exam_toefl, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :exam_qimo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :exam_qimo, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :guide, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :guide, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :guide_vip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :guide_vip, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :logic, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :logic, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :alumnus, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :alumnus, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :finished, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :finished, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :school_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :school_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :major_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :major_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :grade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :grade, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :signup_openclass, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :signup_openclass, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sex, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sex, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.number_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :qq %><br />
-    <%= f.number_field :qq %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :home_51 %><br />
-    <%= f.check_box :home_51 %>
-  </div>
-  <div class="field">
-    <%= f.label :home_101 %><br />
-    <%= f.check_box :home_101 %>
-  </div>
-  <div class="field">
-    <%= f.label :home_summer %><br />
-    <%= f.check_box :home_summer %>
-  </div>
-  <div class="field">
-    <%= f.label :exam_4 %><br />
-    <%= f.check_box :exam_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :exam_6 %><br />
-    <%= f.check_box :exam_6 %>
-  </div>
-  <div class="field">
-    <%= f.label :exam_toefl %><br />
-    <%= f.check_box :exam_toefl %>
-  </div>
-  <div class="field">
-    <%= f.label :exam_qimo %><br />
-    <%= f.check_box :exam_qimo %>
-  </div>
-  <div class="field">
-    <%= f.label :guide %><br />
-    <%= f.check_box :guide %>
-  </div>
-  <div class="field">
-    <%= f.label :guide_vip %><br />
-    <%= f.check_box :guide_vip %>
-  </div>
-  <div class="field">
-    <%= f.label :logic %><br />
-    <%= f.check_box :logic %>
-  </div>
-  <div class="field">
-    <%= f.label :alumnus %><br />
-    <%= f.check_box :alumnus %>
-  </div>
-  <div class="field">
-    <%= f.label :finished %><br />
-    <%= f.check_box :finished %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                people_path, :class => 'btn' %>
   </div>
 <% end %>

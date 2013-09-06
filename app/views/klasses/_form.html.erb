@@ -1,89 +1,172 @@
-<%= form_for(@klass) do |f| %>
-  <% if @klass.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@klass.errors.count, "error") %> prohibited this klass from being saved:</h2>
-
-      <ul>
-      <% @klass.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= semantic_form_for @klass, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group hide">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :projector, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :projector, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sound, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :sound, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mic, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :mic, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :laser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :laser, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :network, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :network, :class => 'check_box' %>
+    </div>
+  </div> 
+  <div class="control-group">
+    <%= f.label :video_makeup, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :video_makeup, :class => 'check_box' %>
+    </div>
+  </div> 
+  <div class="control-group">
+    <%= f.label :chaban, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :chaban, :class => 'check_box' %>
+    </div>
+  </div>      
+  <div class="control-group">
+    <%= f.label :cycle, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cycle, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :frequency, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :frequency, :class => 'text_field' %>
+    </div>
+  </div>  
+  <div class="control-group">
+    <%= f.label :section, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :section, :class => 'number_field' %>
+    </div>
+  </div> 
+  <div class="control-group">
+    <%= f.label :menu, :class => 'control-label' %>
+    <div class="controls">
+      <%Klass::KlassMenu.each do |choice|%>
+      <label class="radio inline">
+      <%= f.radio_button :menu, choice%><%=choice%>
+      </label>
+      <%end%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :capacity, :class => 'control-label' %>
+    <div class="controls">
+      <%Klass::KlassCapacity.each do |choice|%>
+      <label class="radio inline">
+      <%= f.radio_button :capacity, choice%><%=choice%>
+      </label>
+      <%end%>
+    </div>
+  </div>        
+  <div class="control-group">
+    <%= f.label :duration, :class => 'control-label' %>
+    <div class="controls">
+      <%Klass::Duration.each do |choice|%>
+      <label class="radio inline">
+      <%= f.radio_button :duration, choice%><%=choice%>
+      </label>
+      <%end%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kind, :class => 'control-label' %>
+    <div class="controls">
+      <%Klass::Kind.each do |choice|%>
+      <label class="radio inline">
+      <%= f.radio_button :kind, choice%><%=choice%>
+      </label>
+      <%end%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :style, :class => 'control-label' %>
+    <div class="controls">
+      <%Klass::Style.each do |choice|%>
+      <label class="radio inline">
+      <%= f.radio_button :style, choice%><%=choice%>
+      </label>
+      <%end%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :score, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :score, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :remark, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :remark, :class => 'text_area',:rows=>5 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tools, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :tools, :class => 'text_area',:rows=>5 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :need_before_task, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :need_before_task, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :before_task, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :before_task, :class => 'text_area',:rows=>5,:disabled=>(f.object.need_before_task != true) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :need_after_task, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :need_after_task, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :after_task, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :after_task, :class => 'text_area',:rows=>5,:disabled=>(f.object.need_after_task != true) %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :projector %><br />
-    <%= f.check_box :projector %>
-  </div>
-  <div class="field">
-    <%= f.label :sound %><br />
-    <%= f.check_box :sound %>
-  </div>
-  <div class="field">
-    <%= f.label :mic %><br />
-    <%= f.check_box :mic %>
-  </div>
-  <div class="field">
-    <%= f.label :capacity %><br />
-    <%= f.number_field :capacity %>
-  </div>
-  <div class="field">
-    <%= f.label :duration %><br />
-    <%= f.text_field :duration %>
-  </div>
-  <div class="field">
-    <%= f.label :frequency %><br />
-    <%= f.text_field :frequency %>
-  </div>
-  <div class="field">
-    <%= f.label :cycle %><br />
-    <%= f.text_field :cycle %>
-  </div>
-  <div class="field">
-    <%= f.label :section %><br />
-    <%= f.number_field :section %>
-  </div>
-  <div class="field">
-    <%= f.label :kind %><br />
-    <%= f.text_field :kind %>
-  </div>
-  <div class="field">
-    <%= f.label :chaban %><br />
-    <%= f.check_box :chaban %>
-  </div>
-  <div class="field">
-    <%= f.label :style %><br />
-    <%= f.text_field :style %>
-  </div>
-  <div class="field">
-    <%= f.label :video_makeup %><br />
-    <%= f.check_box :video_makeup %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br />
-    <%= f.number_field :score %>
-  </div>
-  <div class="field">
-    <%= f.label :remark %><br />
-    <%= f.text_area :remark %>
-  </div>
-  <div class="field">
-    <%= f.label :network %><br />
-    <%= f.check_box :network %>
-  </div>
-  <div class="field">
-    <%= f.label :tools %><br />
-    <%= f.text_area :tools %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                klasses_path, :class => 'btn' %>
   </div>
 <% end %>

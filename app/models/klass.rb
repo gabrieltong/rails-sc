@@ -38,6 +38,10 @@ class Klass < ActiveRecord::Base
     end
   end  
 
+  state_machine.states.map do |state|
+    scope state.name, :conditions => { :state => state.name.to_s }
+  end
+  
   private 
 
   # def 

@@ -1,41 +1,54 @@
-<h1>Listing baomings</h1>
-
-<table>
-  <tr>
-    <th>Person</th>
-    <th>Discount way</th>
-    <th>Payment way</th>
-    <th>Makeup</th>
-    <th>Next</th>
-    <th>Important</th>
-    <th>Installment</th>
-    <th>Installment duration</th>
-    <th>Installment value</th>
-    <th>Installment last</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @baomings.each do |baoming| %>
-  <tr>
-    <td><%= baoming.person_id %></td>
-    <td><%= baoming.discount_way %></td>
-    <td><%= baoming.payment_way %></td>
-    <td><%= baoming.makeup %></td>
-    <td><%= baoming.next %></td>
-    <td><%= baoming.important %></td>
-    <td><%= baoming.installment %></td>
-    <td><%= baoming.installment_duration %></td>
-    <td><%= baoming.installment_value %></td>
-    <td><%= baoming.installment_last %></td>
-    <td><%= link_to 'Show', baoming %></td>
-    <td><%= link_to 'Edit', edit_baoming_path(baoming) %></td>
-    <td><%= link_to 'Destroy', baoming, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Baoming -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:person_id) %></th>
+      <th><%= model_class.human_attribute_name(:discount_way) %></th>
+      <th><%= model_class.human_attribute_name(:payment_way) %></th>
+      <th><%= model_class.human_attribute_name(:makeup) %></th>
+      <th><%= model_class.human_attribute_name(:next) %></th>
+      <th><%= model_class.human_attribute_name(:important) %></th>
+      <th><%= model_class.human_attribute_name(:installment) %></th>
+      <th><%= model_class.human_attribute_name(:installment_duration) %></th>
+      <th><%= model_class.human_attribute_name(:installment_value) %></th>
+      <th><%= model_class.human_attribute_name(:installment_last) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @baomings.each do |baoming| %>
+      <tr>
+        <td><%= link_to baoming.id, baoming_path(baoming) %></td>
+        <td><%= baoming.person_id %></td>
+        <td><%= baoming.discount_way %></td>
+        <td><%= baoming.payment_way %></td>
+        <td><%= baoming.makeup %></td>
+        <td><%= baoming.next %></td>
+        <td><%= baoming.important %></td>
+        <td><%= baoming.installment %></td>
+        <td><%= baoming.installment_duration %></td>
+        <td><%= baoming.installment_value %></td>
+        <td><%= baoming.installment_last %></td>
+        <td><%=l baoming.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_baoming_path(baoming), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      baoming_path(baoming),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Baoming', new_baoming_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_baoming_path,
+            :class => 'btn btn-primary' %>

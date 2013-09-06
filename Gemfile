@@ -43,3 +43,7 @@ gem 'state_machine'
 gem 'ancestry'
 gem 'roo'
 gem "paperclip", "= 3.0.4"
+gem 'formtastic'
+group :development,:gabriellocal do
+  gem "better_errors"
+end
