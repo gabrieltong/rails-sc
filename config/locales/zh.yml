@@ -148,6 +148,9 @@
         created_at: '添加日期'
         sex: '性别'
       student:
+        school: '学校'
+        college: '学院'
+        major: '专业'
         home_51: '五一回家'
         home_101: '十一回家'
         home_summer: '暑假回家'

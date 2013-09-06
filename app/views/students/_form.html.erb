@@ -28,6 +28,30 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :school, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :school_id, School.all, :id, :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :college, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :college_id, College.all, :id, :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :major, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :major_id, Major.all, :id, :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :grade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :grade, :class => 'number_field' %>
+    </div>
+  </div>  
+  <div class="control-group">
     <%= f.label :home_51, :class => 'control-label' %>
     <div class="controls">
       <%= f.check_box :home_51, :class => 'check_box' %>
@@ -105,12 +129,6 @@
       <%= f.check_box :signup_openclass, :class => 'check_box' %>
     </div>
   </div>  
-  <div class="control-group">
-    <%= f.label :grade, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :grade, :class => 'number_field' %>
-    </div>
-  </div>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

@@ -10,6 +10,10 @@
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:qq) %></th>
       <th><%= model_class.human_attribute_name(:sex) %></th>
+      <th><%= model_class.human_attribute_name(:school) %></th>
+      <th><%= model_class.human_attribute_name(:college) %></th>
+      <th><%= model_class.human_attribute_name(:major) %></th>
+      <th><%= model_class.human_attribute_name(:grade) %></th>
       <th><%= model_class.human_attribute_name(:home_51) %></th>
       <th><%= model_class.human_attribute_name(:home_101) %></th>
       <th><%= model_class.human_attribute_name(:home_summer) %></th>
@@ -22,7 +26,7 @@
       <th><%= model_class.human_attribute_name(:logic) %></th>
       <th><%= model_class.human_attribute_name(:alumnus) %></th>
       <th><%= model_class.human_attribute_name(:finished) %></th>
-      <th><%= model_class.human_attribute_name(:grade) %></th>
+      
       <th><%= model_class.human_attribute_name(:signup_openclass) %></th>
       
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -37,6 +41,10 @@
         <td><%= student.phone %></td>
         <td><%= student.qq %></td>
         <td><%= student.sex %></td>
+        <td><%= student.school.title %></td>
+        <td><%= student.college.title %></td>
+        <td><%= student.major.title %></td>
+        <td><%= student.grade %></td>
         <td><%= sf student.home_51 %></td>
         <td><%= sf student.home_101 %></td>
         <td><%= sf student.home_summer %></td>
@@ -49,7 +57,7 @@
         <td><%= sf student.logic %></td>
         <td><%= sf student.alumnus %></td>
         <td><%= sf student.finished %></td>
-        <td><%= student.grade %></td>
+        
         <td><%= sf student.signup_openclass %></td>
         <td><%=l student.created_at %></td>
         <td>
