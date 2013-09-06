@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904142206) do
+ActiveRecord::Schema.define(:version => 20130906024656) do
 
   create_table "baomingitems", :force => true do |t|
     t.integer  "baoming_id"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(:version => 20130904142206) do
     t.float    "installment_last"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "colleges", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "klass_joins", :force => true do |t|
@@ -109,8 +115,12 @@ ActiveRecord::Schema.define(:version => 20130904142206) do
 
   create_table "markets", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "markets_people", :force => true do |t|
@@ -145,6 +155,7 @@ ActiveRecord::Schema.define(:version => 20130904142206) do
     t.integer  "grade"
     t.boolean  "signup_openclass"
     t.string   "sex"
+    t.integer  "college_id"
   end
 
   create_table "planitems", :force => true do |t|
@@ -156,6 +167,15 @@ ActiveRecord::Schema.define(:version => 20130904142206) do
     t.float    "duration"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "title"
+    t.string   "person_id"
+    t.datetime "start_at"
+    t.string   "will"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rooms", :force => true do |t|

@@ -80,4 +80,12 @@ class MarketsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def import
+    @market = Market.find(params[:id])
+  end
+
+  def import_submit
+    
+  end
 end
