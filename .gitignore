@@ -19,3 +19,6 @@ log
 */*/.DS_Store
 .DS_Store
 .gitignore.swp
+public/system
+.ruby-gemset
+.sass-cache
