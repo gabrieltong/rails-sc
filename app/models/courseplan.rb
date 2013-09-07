@@ -1,0 +1,3 @@
+class Courseplan < Klassplan
+	
+end

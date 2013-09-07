@@ -3,14 +3,20 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:username) %>:</strong></dt>
-  <dd><%= @teacher.username %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= @teacher.phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:qq) %>:</strong></dt>
-  <dd><%= @teacher.qq %></dd>
-</dl>
+<table class="table table-bordered table-striped">
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:username) %>:</strong></td>
+    <td><%= @teacher.username %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:phone) %>:</strong></td>
+    <td><%= @teacher.phone %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:qq) %>:</strong></td>
+    <td><%= @teacher.qq %></td>
+  </tr>  
+</table>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

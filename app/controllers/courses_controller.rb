@@ -44,9 +44,11 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
+        
         format.html { redirect_to @course, notice: 'course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
+        ppp @course.errors.full_messages
         format.html { render action: "new" }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end

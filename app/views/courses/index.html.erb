@@ -1,13 +1,12 @@
-<%- model_class = Klass -%>
+<%- model_class = Course -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:state) %></th>
       <th><%= model_class.human_attribute_name(:projector) %></th>
       <th><%= model_class.human_attribute_name(:sound) %></th>
       <th><%= model_class.human_attribute_name(:mic) %></th>
@@ -35,39 +34,38 @@
     </tr>
   </thead>
   <tbody>
-    <% @klasses.each do |klass| %>
+    <% @courses.each do |course| %>
       <tr>
-        <td><%= link_to klass.id, klass_path(klass) %></td>
-        <td><%= klass.title %></td>
-        <td><%= klass.state %></td>
-        <td><%= klass.projector %></td>
-        <td><%= klass.sound %></td>
-        <td><%= klass.mic %></td>
-        <td><%= klass.capacity %></td>
-        <td><%= klass.duration %></td>
-        <td><%= klass.frequency %></td>
-        <td><%= klass.cycle %></td>
-        <td><%= klass.section %></td>
-        <td><%= klass.kind %></td>
-        <td><%= klass.chaban %></td>
-        <td><%= klass.style %></td>
-        <td><%= klass.video_makeup %></td>
-        <td><%= klass.score %></td>
-        <td><%= klass.remark %></td>
-        <td><%= klass.network %></td>
-        <td><%= klass.tools %></td>
-        <td><%= klass.menu %></td>
-        <td><%= klass.laser %></td>
-        <td><%= klass.need_before_task %></td>
-        <td><%= klass.need_after_task %></td>
-        <td><%= klass.before_task %></td>
-        <td><%= klass.after_task %></td>
-        <td><%=l klass.created_at %></td>
+        <td><%= link_to course.id, course_path(course) %></td>
+        <td><%= course.title %></td>
+        <td><%= course.projector %></td>
+        <td><%= course.sound %></td>
+        <td><%= course.mic %></td>
+        <td><%= course.capacity %></td>
+        <td><%= course.duration %></td>
+        <td><%= course.frequency %></td>
+        <td><%= course.cycle %></td>
+        <td><%= course.section %></td>
+        <td><%= course.kind %></td>
+        <td><%= course.chaban %></td>
+        <td><%= course.style %></td>
+        <td><%= course.video_makeup %></td>
+        <td><%= course.score %></td>
+        <td><%= course.remark %></td>
+        <td><%= course.network %></td>
+        <td><%= course.tools %></td>
+        <td><%= course.menu %></td>
+        <td><%= course.laser %></td>
+        <td><%= course.need_before_task %></td>
+        <td><%= course.need_after_task %></td>
+        <td><%= course.before_task %></td>
+        <td><%= course.after_task %></td>
+        <td><%=l course.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_klass_path(klass), :class => 'btn btn-mini' %>
+                      edit_course_path(course), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      klass_path(klass),
+                      course_path(course),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -78,5 +76,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_klass_path,
+            new_course_path,
             :class => 'btn btn-primary' %>

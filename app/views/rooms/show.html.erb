@@ -3,20 +3,32 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @room.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:projector) %>:</strong></dt>
-  <dd><%= sf @room.projector %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sound) %>:</strong></dt>
-  <dd><%= sf @room.sound %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mic) %>:</strong></dt>
-  <dd><%= sf @room.mic %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:laser) %>:</strong></dt>
-  <dd><%= sf @room.laser %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:network) %>:</strong></dt>
-  <dd><%= sf @room.network %></dd>
-</dl>
+<table class="table table-bordered table-striped">
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:title) %>:</strong></td>
+    <td><%= @room.title %></dd>
+  </tr>   
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:projector) %>:</strong></td>
+    <td><%= sf @room.projector %></dd>
+  </tr>   
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:sound) %>:</strong></td>
+    <td><%= sf @room.sound %></dd>
+  </tr>   
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:mic) %>:</strong></td>
+    <td><%= sf @room.mic %></dd>
+  </tr>   
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:laser) %>:</strong></td>
+    <td><%= sf @room.laser %></dd>
+  </tr>   
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:network) %>:</strong></td>
+    <td><%= sf @room.network %></dd>
+  </tr>   
+</table>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

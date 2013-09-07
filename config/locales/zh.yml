@@ -21,6 +21,44 @@
       destroy: '删除'
     form:
       cancel: '取消'
+  services:
+    index:
+      title: '服务'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建服务'
+    edit:
+      title: '编辑服务'  
+    show:
+      title: '服务'    
+      back: '服务列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'    
+  courses:
+    index:
+      title: '课程'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建课程'
+    edit:
+      title: '编辑课程'  
+    show:
+      title: '课程'    
+      back: '课程列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'        
   reviews:
     prepare:
       new: '新建测评'
@@ -224,14 +262,16 @@
         will: '报名意愿'
         report_hard: '测评报告-硬件规划'
         report_soft:  '测评报告-软件规划'
+      service:
+        title: '名称'  
       klass:
-        title: '课程名称'
+        title: '名称'
         state: '类别'
         projector: '投影仪' 
         sound: '音响'
         mic: '麦克'
         laser: '激光笔'
-        capacity: '课程容量'
+        capacity: '容量'
         duration: '单次时长(小时)'
         frequency: '课程频率'
         cycle: '周期'

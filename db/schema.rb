@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130906152457) do
+ActiveRecord::Schema.define(:version => 20130906231956) do
 
   create_table "baomingitems", :force => true do |t|
     t.integer  "baoming_id"
@@ -84,6 +84,22 @@ ActiveRecord::Schema.define(:version => 20130906152457) do
     t.integer "room_id"
   end
 
+  create_table "klasses_students", :id => false, :force => true do |t|
+    t.integer "klass_id"
+    t.integer "student_id"
+  end
+
+  add_index "klasses_students", ["klass_id"], :name => "index_klasses_students_on_klass_id"
+  add_index "klasses_students", ["student_id"], :name => "index_klasses_students_on_student_id"
+
+  create_table "klasses_teachers", :id => false, :force => true do |t|
+    t.integer "klass_id"
+    t.integer "teacher_id"
+  end
+
+  add_index "klasses_teachers", ["klass_id"], :name => "index_klasses_teachers_on_klass_id"
+  add_index "klasses_teachers", ["teacher_id"], :name => "index_klasses_teachers_on_teacher_id"
+
   create_table "klassjoins", :force => true do |t|
     t.integer  "klass_id"
     t.integer  "front_id"
@@ -98,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20130906152457) do
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.integer  "room_id"
+    t.string   "type"
   end
 
   create_table "majors", :force => true do |t|

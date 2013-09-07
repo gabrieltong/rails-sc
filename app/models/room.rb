@@ -4,6 +4,12 @@ class Room < ActiveRecord::Base
   has_and_belongs_to_many :klasses,:uniq=>true
   has_many :klassplans
 
+  has_and_belongs_to_many :courses,:uniq=>true
+  has_many :courseplans
+
+  has_and_belongs_to_many :services,:uniq=>true
+  has_many :serviceplans
+
   validates :title,:presence=>true
   
   def available_for_klass(klass)

@@ -1,11 +1,11 @@
 class ServicesController < ApplicationController
   
   def index
-    @klasses = Klass.service
+    @services = Service.all
 
     respond_to do |format|
       format.html 
-      format.json { render json: @klasses }
+      format.json { render json: @services }
     end
 
     
@@ -13,62 +13,62 @@ class ServicesController < ApplicationController
 
 
   def show
-    @klass = Klass.service.find(params[:id])
+    @service = Service.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @klass }
+      format.json { render json: @service }
     end
   end
 
   def new
-    @klass = Klass.service.new
+    @service = Service.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @klass }
+      format.json { render json: @service }
     end
   end
 
 
   def edit
-    @klass = Klass.service.find(params[:id])
+    @service = Service.find(params[:id])
   end
 
   def create
-    @klass = Klass.service.new(params[:klass])
+    @service = Service.new(params[:service])
 
     respond_to do |format|
-      if @klass.save
-        format.html { redirect_to @klass, notice: 'Klass was successfully created.' }
-        format.json { render json: @klass, status: :created, location: @klass }
+      if @service.save
+        format.html { redirect_to @service, notice: 'Service was successfully created.' }
+        format.json { render json: @service, status: :created, location: @service }
       else
         format.html { render action: "new" }
-        format.json { render json: @klass.errors, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    @klass = Klass.service.find(params[:id])
+    @service = Service.find(params[:id])
 
     respond_to do |format|
-      if @klass.update_attributes(params[:klass])
-        format.html { redirect_to @klass, notice: 'Klass was successfully updated.' }
+      if @service.update_attributes(params[:service])
+        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @klass.errors, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @klass = Klass.service.find(params[:id])
-    @klass.destroy
+    @service = Service.find(params[:id])
+    @service.destroy
 
     respond_to do |format|
-      format.html { redirect_to klasses_url }
+      format.html { redirect_to services_url }
       format.json { head :no_content }
     end
   end

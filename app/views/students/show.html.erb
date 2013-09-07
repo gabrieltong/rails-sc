@@ -3,54 +3,93 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:username) %>:</strong></dt>
-  <dd><%= @student.username %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= @student.phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:qq) %>:</strong></dt>
-  <dd><%= @student.qq %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
-  <dd><%= @student.state %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:home_51) %>:</strong></dt>
-  <dd><%= @student.home_51 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:home_101) %>:</strong></dt>
-  <dd><%= @student.home_101 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:home_summer) %>:</strong></dt>
-  <dd><%= @student.home_summer %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:exam_4) %>:</strong></dt>
-  <dd><%= @student.exam_4 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:exam_6) %>:</strong></dt>
-  <dd><%= @student.exam_6 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:exam_toefl) %>:</strong></dt>
-  <dd><%= @student.exam_toefl %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:exam_qimo) %>:</strong></dt>
-  <dd><%= @student.exam_qimo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:guide) %>:</strong></dt>
-  <dd><%= @student.guide %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:guide_vip) %>:</strong></dt>
-  <dd><%= @student.guide_vip %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:logic) %>:</strong></dt>
-  <dd><%= @student.logic %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:alumnus) %>:</strong></dt>
-  <dd><%= @student.alumnus %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:finished) %>:</strong></dt>
-  <dd><%= @student.finished %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:school_id) %>:</strong></dt>
-  <dd><%= @student.school_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:major_id) %>:</strong></dt>
-  <dd><%= @student.major_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:grade) %>:</strong></dt>
-  <dd><%= @student.grade %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:signup_openclass) %>:</strong></dt>
-  <dd><%= @student.signup_openclass %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sex) %>:</strong></dt>
-  <dd><%= @student.sex %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:college_id) %>:</strong></dt>
-  <dd><%= @student.college_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
-  <dd><%= @student.type %></dd>
-</dl>
+<table class="table table-bordered table-striped">
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:username) %>:</strong></td>
+    <td><%= @student.username %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:sex) %>:</strong></td>
+    <td><%= @student.sex %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:phone) %>:</strong></td>
+    <td><%= @student.phone %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:qq) %>:</strong></td>
+    <td><%= @student.qq %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:school_id) %>:</strong></td>
+    <td><%= @student.school_id %></td>
+  </tr>
+    <tr>
+    <td><strong><%= model_class.human_attribute_name(:college_id) %>:</strong></td>
+    <td><%= @student.college_id %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:major_id) %>:</strong></td>
+    <td><%= @student.major_id %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:grade) %>:</strong></td>
+    <td><%= sf @student.grade %></td>
+  </tr> 
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:home_51) %>:</strong></td>
+    <td><%= sf @student.home_51 %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:home_101) %>:</strong></td>
+    <td><%= sf @student.home_101 %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:home_summer) %>:</strong></td>
+    <td><%= sf @student.home_summer %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:exam_4) %>:</strong></td>
+    <td><%= sf @student.exam_4 %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:exam_6) %>:</strong></td>
+    <td><%= sf @student.exam_6 %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:exam_toefl) %>:</strong></td>
+    <td><%= sf @student.exam_toefl %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:exam_qimo) %>:</strong></td>
+    <td><%= sf @student.exam_qimo %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:guide) %>:</strong></td>
+    <td><%= sf @student.guide %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:guide_vip) %>:</strong></td>
+    <td><%= sf @student.guide_vip %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:logic) %>:</strong></td>
+    <td><%= sf @student.logic %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:alumnus) %>:</strong></td>
+    <td><%= sf @student.alumnus %></td>
+  </tr>  
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:finished) %>:</strong></td>
+    <td><%= sf @student.finished %></td>
+  </tr>    
+  <tr>
+    <td><strong><%= model_class.human_attribute_name(:signup_openclass) %>:</strong></td>
+    <td><%= @student.signup_openclass %></td>
+  </tr>  
+
+</table>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -1,73 +1,31 @@
-<%- model_class = Klass -%>
+<%- model_class = Service -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:state) %></th>
-      <th><%= model_class.human_attribute_name(:projector) %></th>
-      <th><%= model_class.human_attribute_name(:sound) %></th>
-      <th><%= model_class.human_attribute_name(:mic) %></th>
       <th><%= model_class.human_attribute_name(:capacity) %></th>
-      <th><%= model_class.human_attribute_name(:duration) %></th>
-      <th><%= model_class.human_attribute_name(:frequency) %></th>
-      <th><%= model_class.human_attribute_name(:cycle) %></th>
-      <th><%= model_class.human_attribute_name(:section) %></th>
-      <th><%= model_class.human_attribute_name(:kind) %></th>
-      <th><%= model_class.human_attribute_name(:chaban) %></th>
-      <th><%= model_class.human_attribute_name(:style) %></th>
-      <th><%= model_class.human_attribute_name(:video_makeup) %></th>
-      <th><%= model_class.human_attribute_name(:score) %></th>
-      <th><%= model_class.human_attribute_name(:remark) %></th>
-      <th><%= model_class.human_attribute_name(:network) %></th>
-      <th><%= model_class.human_attribute_name(:tools) %></th>
       <th><%= model_class.human_attribute_name(:menu) %></th>
-      <th><%= model_class.human_attribute_name(:laser) %></th>
-      <th><%= model_class.human_attribute_name(:need_before_task) %></th>
-      <th><%= model_class.human_attribute_name(:need_after_task) %></th>
-      <th><%= model_class.human_attribute_name(:before_task) %></th>
-      <th><%= model_class.human_attribute_name(:after_task) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @klasses.each do |klass| %>
+    <% @services.each do |service| %>
       <tr>
-        <td><%= link_to klass.id, klass_path(klass) %></td>
-        <td><%= klass.title %></td>
-        <td><%= klass.state %></td>
-        <td><%= klass.projector %></td>
-        <td><%= klass.sound %></td>
-        <td><%= klass.mic %></td>
-        <td><%= klass.capacity %></td>
-        <td><%= klass.duration %></td>
-        <td><%= klass.frequency %></td>
-        <td><%= klass.cycle %></td>
-        <td><%= klass.section %></td>
-        <td><%= klass.kind %></td>
-        <td><%= klass.chaban %></td>
-        <td><%= klass.style %></td>
-        <td><%= klass.video_makeup %></td>
-        <td><%= klass.score %></td>
-        <td><%= klass.remark %></td>
-        <td><%= klass.network %></td>
-        <td><%= klass.tools %></td>
-        <td><%= klass.menu %></td>
-        <td><%= klass.laser %></td>
-        <td><%= klass.need_before_task %></td>
-        <td><%= klass.need_after_task %></td>
-        <td><%= klass.before_task %></td>
-        <td><%= klass.after_task %></td>
-        <td><%=l klass.created_at %></td>
+        <td><%= link_to service.id, service_path(service) %></td>
+        <td><%= service.title %></td>
+        <td><%= service.capacity %></td>
+        <td><%= service.menu %></td>
+        <td><%= service.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_klass_path(klass), :class => 'btn btn-mini' %>
+                      edit_service_path(service), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      klass_path(klass),
+                      service_path(service),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -78,5 +36,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_klass_path,
+            new_service_path,
             :class => 'btn btn-primary' %>
