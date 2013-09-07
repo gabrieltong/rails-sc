@@ -1,27 +1,40 @@
-<h1>Listing scores</h1>
-
-<table>
-  <tr>
-    <th>Value</th>
-    <th>Type</th>
-    <th>Person</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @scores.each do |score| %>
-  <tr>
-    <td><%= score.value %></td>
-    <td><%= score.type %></td>
-    <td><%= score.person_id %></td>
-    <td><%= link_to 'Show', score %></td>
-    <td><%= link_to 'Edit', edit_score_path(score) %></td>
-    <td><%= link_to 'Destroy', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Score -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      <th><%= model_class.human_attribute_name(:state) %></th>
+      <th><%= model_class.human_attribute_name(:person_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scores.each do |score| %>
+      <tr>
+        <td><%= link_to score.id, score_path(score) %></td>
+        <td><%= score.value %></td>
+        <td><%= score.state %></td>
+        <td><%= score.person_id %></td>
+        <td><%=l score.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_score_path(score), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      score_path(score),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Score', new_score_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_score_path,
+            :class => 'btn btn-primary' %>

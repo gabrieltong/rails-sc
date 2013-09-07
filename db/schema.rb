@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130906231956) do
+ActiveRecord::Schema.define(:version => 20130907011728) do
 
   create_table "baomingitems", :force => true do |t|
     t.integer  "baoming_id"
@@ -224,7 +224,7 @@ ActiveRecord::Schema.define(:version => 20130906231956) do
 
   create_table "scores", :force => true do |t|
     t.string   "value"
-    t.string   "type"
+    t.string   "state"
     t.integer  "person_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

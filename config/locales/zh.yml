@@ -2,6 +2,63 @@
   time:
     formats:
       default: "%H:%M"
+  baomings:
+    index:
+      title: '报名'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建报名'
+    edit:
+      title: '编辑报名'  
+    show:
+      title: '报名'    
+      back: '报名列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'
+  warnings:
+    index:
+      title: '提醒'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建提醒'
+    edit:
+      title: '编辑提醒'  
+    show:
+      title: '提醒'    
+      back: '积分列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'    
+  scores:
+    index:
+      title: '积分'
+      actions: '操作'
+      edit: '编辑'
+      destroy: '删除'
+      confirm: '确认删除'
+      new: '新建'
+    new:
+      title: '新建积分'
+    edit:
+      title: '编辑积分'  
+    show:
+      title: '积分'    
+      back: '积分列表'
+      edit: '编辑'
+      destroy: '删除'
+    form:
+      cancel: '取消'      
   students:
     index:
       title: '学员'
@@ -209,6 +266,17 @@
         qq: 'QQ'
         created_at: '添加日期'
         sex: '性别'
+      baoming:
+        person_id: '用户'
+        discount_way: '优惠方式'
+        payment_way: '付款方式'
+        makeup: '备注'
+        important: '重点客户'
+        installment: '分期付款'
+        installment_duration: '分期付款周期'
+        installment_value: '分期付款金额'
+        installment_last: '分期付款余额'
+        created_at: '创建日期'
       student:
         school: '学校'
         college: '学院'
@@ -263,7 +331,17 @@
         report_hard: '测评报告-硬件规划'
         report_soft:  '测评报告-软件规划'
       service:
-        title: '名称'  
+        title: '名称' 
+      warning:
+        title: '名称'
+        person_id: '用户'
+
+        created_at: '创建日期'
+      score:
+        value: '分值'   
+        state: '类型'
+        person_id: '用户'
+        created_at: '创建日期'
       klass:
         title: '名称'
         state: '类别'
