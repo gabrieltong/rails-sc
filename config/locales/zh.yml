@@ -255,6 +255,13 @@
     form:
       cancel: '取消'    
   new_klass: '新建课程'
+  activemodel:
+    errors:
+      models:
+        search_by_phone:
+          attributes:
+            phone:
+              blank: '手机号不能为空'
   activerecord:
     attributes:
       default:

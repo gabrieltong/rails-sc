@@ -10,6 +10,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def search_by_phone
+    
+  end
+
   def prepare
     # @student = Student.find_by_phone(params[:phone])
   end

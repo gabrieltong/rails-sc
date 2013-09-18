@@ -1,5 +1,7 @@
 RailsSc::Application.routes.draw do
   # get "entrance/index"
+  get 'reviews/search_by_phone'
+  
   get "entrance/index"
 
   # get "reviews/prepare"
